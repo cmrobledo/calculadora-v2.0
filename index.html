@@ -15,25 +15,45 @@
         <input type="text" id="pantalla" placeholder="0" />
       </div>
       <div class="contenedor-botones">
+        <input type="button" value="(" onclick="agregar('(')" />
+        <input type="button" value=")" onclick="agregar(')')" />
+        <input
+          type="button"
+          style="font-size: 18px"
+          value="Floor"
+          onclick="floor()"
+        />
+        <input
+          type="button"
+          style="font-size: 18px"
+          value="Round"
+          onclick="round()"
+        />
         <input type="button" value="7" onclick="agregar('7')" />
         <input type="button" value="8" onclick="agregar('8')" />
         <input type="button" value="9" onclick="agregar('9')" />
-        <input type="button" value="/" onclick="agregar('/')" />
+        <input
+          type="button"
+          id="divido"
+          value="&#247;"
+          onclick="agregar('/')"
+        />
         <input type="button" value="4" onclick="agregar('4')" />
         <input type="button" value="5" onclick="agregar('5')" />
         <input type="button" value="6" onclick="agregar('6')" />
-        <input type="button" value="*" onclick="agregar('*')" />
+        <input type="button" value="x" onclick="agregar('*')" />
         <input type="button" value="1" onclick="agregar('1')" />
         <input type="button" value="2" onclick="agregar('2')" />
         <input type="button" value="3" onclick="agregar('3')" />
         <input type="button" value="-" onclick="agregar('-')" />
         <input type="button" value="0" onclick="agregar('0')" />
+        <input type="button" value="00" onclick="agregar('00')" />
         <input type="button" value="." onclick="agregar('.')" />
         <input type="button" value="+" id="boton-suma" onclick="agregar('+')" />
-        <input type="button" value="=" id="boton-igual" onclick="calcular()" />
       </div>
       <div class="contenedor-ac">
         <input type="button" value="AC" id="boton-ac" onclick="borrar()" />
+        <input type="button" value="=" id="boton-igual" onclick="calcular()" />
       </div>
     </div>
 
