@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style2.css">
+  <style>
+          * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+    }
+
+    h1 {
+      margin: 20px;
+    }
+
+    #contenedor-principal {
+      border: 2px solid black;
+      min-height: 475px;
+      width: 380px;
+      min-width: 300px;
+      background-color: rgb(160, 165, 162);
+    }
+
+    .contenedor-pantalla {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: 20px;
+      padding: 5px;
+    }
+
+    #pantalla {
+      width: 90%;
+      height: 80px;
+      border: 2px double black;
+      text-align: right;
+      font-size: xx-large;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      padding: 10px;
+      color: black;
+    }
+
+    ::placeholder {color:black;}
+
+    .contenedor-botones{
+      display: grid;
+      grid-template: 55px 55px 55px 55px/ 80px 80px 80px 80px;
+      grid-gap: 10px;
+      justify-content: center;  
+    }
+
+    #boton-igual {
+      height: 120px;
+    }
+
+    .contenedor-ac {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 5px;
+      margin-left: 10px;
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+
+    #boton-ac {
+      width: 74%;
+      height: 55px;
+      background-color: orangered;
+    }
+
+    #boton-ac:hover {
+      background-color: orange;
+    }
+
+    input[type="button"] {
+      font-size: 30px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      border: 1px solid black;
+      border-radius: 5px;
+      cursor:pointer;
+    }
+
+    input[type="button"]:hover {
+      background-color: #b6afaf;
+    }
+
+    input[value="/"]{
+      background-color: rgb(99, 92, 92);
+    }
+
+    input[value="*"] {
+      background-color: rgb(99, 92, 92);
+    }
+
+    input[value="-"] {
+      background-color: rgb(99, 92, 92);
+    }
+
+    input[value="+"] {
+      background-color: rgb(99, 92, 92);
+    }
+
+    input[value="="] {
+      background-color: rgb(99, 92, 92);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Calculadora</h1>
+  <div class="calculadora" id="contenedor-principal">
+    <div class="contenedor-pantalla">
+      <input type="text" id="pantalla" placeholder="0">
+    </div>
+    <div class="contenedor-botones">
+      <input type="button" value="7" onclick="agregar('7')">
+      <input type="button" value="8" onclick="agregar('8')">
+      <input type="button" value="9" onclick="agregar('9')">
+      <input type="button" value="/" onclick="agregar('/')">            
+      <input type="button" value="4" onclick="agregar('4')">
+      <input type="button" value="5" onclick="agregar('5')">
+      <input type="button" value="6" onclick="agregar('6')">
+      <input type="button" value="*" onclick="agregar('*')">            
+      <input type="button" value="1" onclick="agregar('1')">
+      <input type="button" value="2" onclick="agregar('2')">
+      <input type="button" value="3" onclick="agregar('3')">
+      <input type="button" value="-" onclick="agregar('-')">            
+      <input type="button" value="0" onclick="agregar('0')"> 
+      <input type="button" value="." onclick="agregar('.')">
+      <input type="button" value="+" id="boton-suma" onclick="agregar('+')">
+      <input type="button" value="=" id="boton-igual" onclick="calcular()">
+    </div>
+    <div class="contenedor-ac">
+      <input type="button" value="AC" id="boton-ac" onclick="borrar()">
+    </div>
+  </div>
+
+    <script>
+      function agregar(valor) {
+        document.getElementById("pantalla").value += valor;
+      }
+
+      function borrar(){
+        document.getElementById("pantalla").value = "";
+      }
+
+      function calcular(){
+      const valorPantalla = document.getElementById("pantalla").value;
+      const resultado = eval(valorPantalla);
+      document.getElementById("pantalla").value = resultado;
+      }
+    </script>
+</body>
+</html>

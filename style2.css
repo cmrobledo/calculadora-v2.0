@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+h1 {
+  margin: 20px;
+}
+
+#contenedor-principal {
+  border: 2px solid black;
+  min-height: 475px;
+  width: 380px;
+  min-width: 300px;
+  background-color: rgb(160, 165, 162);
+}
+
+.contenedor-pantalla {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 20px;
+  padding: 5px;
+}
+
+#pantalla {
+  width: 90%;
+  height: 80px;
+  border: 2px double black;
+  text-align: right;
+  font-size: xx-large;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  padding: 10px;
+  color: black;
+}
+
+::placeholder {color:black;}
+
+.contenedor-botones{
+  display: grid;
+  grid-template: 55px 55px 55px 55px/ 80px 80px 80px 80px;
+  grid-gap: 10px;
+  justify-content: center;  
+}
+
+#boton-igual {
+  height: 120px;
+}
+
+.contenedor-ac {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px;
+  margin-left: 10px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+#boton-ac {
+  width: 74%;
+  height: 55px;
+  background-color: orangered;
+}
+
+#boton-ac:hover {
+  background-color: orange;
+}
+
+input[type="button"] {
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #b6afaf;
+}
+
+input[value="/"]{
+  background-color: rgb(99, 92, 92);
+}
+
+input[value="*"] {
+  background-color: rgb(99, 92, 92);
+}
+
+input[value="-"] {
+  background-color: rgb(99, 92, 92);
+}
+
+input[value="+"] {
+  background-color: rgb(99, 92, 92);
+}
+
+input[value="="] {
+  background-color: rgb(99, 92, 92);
+}
