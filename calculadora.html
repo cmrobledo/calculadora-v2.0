@@ -1,173 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora</title>
-    <link rel="stylesheet" href="style2.css">
-  <style>
-          * {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      box-sizing: border-box;
-    }
+    <link rel="stylesheet" href="style2.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
 
-    body {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      
-    }
+      body {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
 
-    h1 {
-      margin: 20px;
-    }
+      h1 {
+        margin: 20px;
+      }
 
-    #contenedor-principal {
-      border: 2px solid black;
-      min-height: 475px;
-      width: 380px;
-      min-width: 300px;
-      background-color: rgb(160, 165, 162);
-    }
+      #contenedor-principal {
+        border: 2px solid black;
+        min-height: 475px;
+        width: 380px;
+        min-width: 300px;
+        background-color: rgb(160, 165, 162);
+      }
 
-    .contenedor-pantalla {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      margin: 20px;
-      padding: 5px;
-    }
+      .contenedor-pantalla {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin: 20px;
+        padding: 5px;
+      }
 
-    #pantalla {
-      width: 90%;
-      height: 80px;
-      border: 2px double black;
-      text-align: right;
-      font-size: xx-large;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: bold;
-      padding: 10px;
-      color: black;
-    }
+      #pantalla {
+        width: 90%;
+        height: 80px;
+        border: 2px double black;
+        text-align: right;
+        font-size: xx-large;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+        padding: 10px;
+        color: black;
+      }
 
-    ::placeholder {color:black;}
+      ::placeholder {
+        color: black;
+      }
 
-    .contenedor-botones{
-      display: grid;
-      grid-template: 55px 55px 55px 55px/ 80px 80px 80px 80px;
-      grid-gap: 10px;
-      justify-content: center;  
-    }
+      .contenedor-botones {
+        display: grid;
+        grid-template: 38px 55px 55px 55px 55px/ 80px 80px 80px 80px;
+        grid-gap: 10px;
+        justify-content: center;
+      }
 
-    #boton-igual {
-      height: 120px;
-    }
+      #boton-igual {
+        height: 55px;
+        /* width: 50%; */
+        background-color: red;
+      }
 
-    .contenedor-ac {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      margin: 5px;
-      margin-left: 10px;
-      padding: 5px;
-      margin-bottom: 20px;
-    }
+      #boton-igual:hover {
+        background-color: orangered;
+      }
 
-    #boton-ac {
-      width: 74%;
-      height: 55px;
-      background-color: orangered;
-    }
+      .contenedor-ac {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        margin: 10px;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
 
-    #boton-ac:hover {
-      background-color: orange;
-    }
+      #boton-ac {
+        /* width: 50%; */
+        height: 55px;
+        background-color: orange;
+      }
 
-    input[type="button"] {
-      font-size: 30px;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: bold;
-      border: 1px solid black;
-      border-radius: 5px;
-      cursor:pointer;
-    }
+      #boton-ac:hover {
+        background-color: orangered;
+      }
 
-    input[type="button"]:hover {
-      background-color: #b6afaf;
-    }
+      input[type="button"] {
+        font-size: 30px;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+        border: 1px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+      }
 
-    input[value="/"]{
-      background-color: rgb(99, 92, 92);
-    }
+      input[type="button"]:hover {
+        background-color: #b6afaf;
+      }
 
-    input[value="*"] {
-      background-color: rgb(99, 92, 92);
-    }
+      #divido {
+        background-color: rgb(99, 92, 92);
+      }
 
-    input[value="-"] {
-      background-color: rgb(99, 92, 92);
-    }
+      #divido:hover {
+        background-color: #b6afaf;
+      }
 
-    input[value="+"] {
-      background-color: rgb(99, 92, 92);
-    }
+      input[value="x"] {
+        background-color: rgb(99, 92, 92);
+      }
 
-    input[value="="] {
-      background-color: rgb(99, 92, 92);
-    }
-  </style>
-</head>
+      input[value="-"] {
+        background-color: rgb(99, 92, 92);
+      }
 
-<body>
-  <h1>Calculadora</h1>
-  <div class="calculadora" id="contenedor-principal">
-    <div class="contenedor-pantalla">
-      <input type="text" id="pantalla" placeholder="0">
+      input[value="+"] {
+        background-color: rgb(99, 92, 92);
+      }
+
+      input[value="="] {
+        background-color: rgb(99, 92, 92);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Calculadora</h1>
+    <div class="calculadora" id="contenedor-principal">
+      <div class="contenedor-pantalla">
+        <input type="text" id="pantalla" placeholder="0" />
+      </div>
+      <div class="contenedor-botones">
+        <input type="button" value="(" onclick="agregar('(')" />
+        <input type="button" value=")" onclick="agregar(')')" />
+        <input
+          type="button"
+          style="font-size: 18px"
+          value="Floor"
+          onclick="floor()"
+        />
+        <input
+          type="button"
+          style="font-size: 18px"
+          value="Round"
+          onclick="round()"
+        />
+        <input type="button" value="7" onclick="agregar('7')" />
+        <input type="button" value="8" onclick="agregar('8')" />
+        <input type="button" value="9" onclick="agregar('9')" />
+        <input
+          type="button"
+          id="divido"
+          value="&#247;"
+          onclick="agregar('/')"
+        />
+        <input type="button" value="4" onclick="agregar('4')" />
+        <input type="button" value="5" onclick="agregar('5')" />
+        <input type="button" value="6" onclick="agregar('6')" />
+        <input type="button" value="x" onclick="agregar('*')" />
+        <input type="button" value="1" onclick="agregar('1')" />
+        <input type="button" value="2" onclick="agregar('2')" />
+        <input type="button" value="3" onclick="agregar('3')" />
+        <input type="button" value="-" onclick="agregar('-')" />
+        <input type="button" value="0" onclick="agregar('0')" />
+        <input type="button" value="00" onclick="agregar('00')" />
+        <input type="button" value="." onclick="agregar('.')" />
+        <input type="button" value="+" id="boton-suma" onclick="agregar('+')" />
+      </div>
+      <div class="contenedor-ac">
+        <input type="button" value="AC" id="boton-ac" onclick="borrar()" />
+        <input type="button" value="=" id="boton-igual" onclick="calcular()" />
+      </div>
     </div>
-    <div class="contenedor-botones">
-      <input type="button" value="7" onclick="agregar('7')">
-      <input type="button" value="8" onclick="agregar('8')">
-      <input type="button" value="9" onclick="agregar('9')">
-      <input type="button" value="/" onclick="agregar('/')">            
-      <input type="button" value="4" onclick="agregar('4')">
-      <input type="button" value="5" onclick="agregar('5')">
-      <input type="button" value="6" onclick="agregar('6')">
-      <input type="button" value="*" onclick="agregar('*')">            
-      <input type="button" value="1" onclick="agregar('1')">
-      <input type="button" value="2" onclick="agregar('2')">
-      <input type="button" value="3" onclick="agregar('3')">
-      <input type="button" value="-" onclick="agregar('-')">            
-      <input type="button" value="0" onclick="agregar('0')"> 
-      <input type="button" value="." onclick="agregar('.')">
-      <input type="button" value="+" id="boton-suma" onclick="agregar('+')">
-      <input type="button" value="=" id="boton-igual" onclick="calcular()">
-    </div>
-    <div class="contenedor-ac">
-      <input type="button" value="AC" id="boton-ac" onclick="borrar()">
-    </div>
-  </div>
 
     <script>
       function agregar(valor) {
         document.getElementById("pantalla").value += valor;
       }
 
-      function borrar(){
+      function borrar() {
         document.getElementById("pantalla").value = "";
       }
 
-      function calcular(){
-      const valorPantalla = document.getElementById("pantalla").value;
-      const resultado = eval(valorPantalla);
-      document.getElementById("pantalla").value = resultado;
+      function calcular() {
+        const valorPantalla = document.getElementById("pantalla").value;
+        const resultado = eval(valorPantalla);
+        document.getElementById("pantalla").value = resultado;
+      }
+
+      function floor() {
+        let redondearAbajo = document.getElementById("pantalla").value;
+        const resultado2 = Math.floor(redondearAbajo);
+        document.getElementById("pantalla").value = resultado2;
+      }
+
+      function round() {
+        let redondear = document.getElementById("pantalla").value;
+        const resultado3 = Math.round(redondear);
+        document.getElementById("pantalla").value = resultado3;
       }
     </script>
-</body>
+  </body>
 </html>

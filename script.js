@@ -20,3 +20,16 @@ function calcular(){
 
 //El "eval" de la línea 15 calcula matemáticamente todo lo que se ponga en valores string
 
+
+//Funciones para redondear cifras
+function floor() {
+  let redondearAbajo = document.getElementById("pantalla").value;
+  const resultado2 = Math.floor(redondearAbajo);
+  document.getElementById("pantalla").value = resultado2;
+}
+
+function round() {
+  let redondear = document.getElementById("pantalla").value;
+  const resultado3 = Math.round(redondear);
+  document.getElementById("pantalla").value = resultado3;
+}

@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora</title>
-  <link rel="stylesheet" href="style2.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
 
-<body>
-<h1>Calculadora</h1>
-  <div class="calculadora" id="contenedor-principal">
-    <div class="contenedor-pantalla">
-      <input type="text" id="pantalla" placeholder="0" />
+  <body>
+    <h1>Calculadora</h1>
+    <div class="calculadora" id="contenedor-principal">
+      <div class="contenedor-pantalla">
+        <input type="text" id="pantalla" placeholder="0" />
+      </div>
+      <div class="contenedor-botones">
+        <input type="button" value="7" onclick="agregar('7')" />
+        <input type="button" value="8" onclick="agregar('8')" />
+        <input type="button" value="9" onclick="agregar('9')" />
+        <input type="button" value="/" onclick="agregar('/')" />
+        <input type="button" value="4" onclick="agregar('4')" />
+        <input type="button" value="5" onclick="agregar('5')" />
+        <input type="button" value="6" onclick="agregar('6')" />
+        <input type="button" value="*" onclick="agregar('*')" />
+        <input type="button" value="1" onclick="agregar('1')" />
+        <input type="button" value="2" onclick="agregar('2')" />
+        <input type="button" value="3" onclick="agregar('3')" />
+        <input type="button" value="-" onclick="agregar('-')" />
+        <input type="button" value="0" onclick="agregar('0')" />
+        <input type="button" value="." onclick="agregar('.')" />
+        <input type="button" value="+" id="boton-suma" onclick="agregar('+')" />
+        <input type="button" value="=" id="boton-igual" onclick="calcular()" />
+      </div>
+      <div class="contenedor-ac">
+        <input type="button" value="AC" id="boton-ac" onclick="borrar()" />
+      </div>
     </div>
-    <div class="contenedor-botones">
-      <input type="button" value="7" onclick="agregar('7')" />
-      <input type="button" value="8" onclick="agregar('8')" />
-      <input type="button" value="9" onclick="agregar('9')" />
-      <input type="button" value="/" onclick="agregar('/')" />
-      <input type="button" value="4" onclick="agregar('4')" />
-      <input type="button" value="5" onclick="agregar('5')" />
-      <input type="button" value="6" onclick="agregar('6')" />
-      <input type="button" value="*" onclick="agregar('*')" />
-      <input type="button" value="1" onclick="agregar('1')" />
-      <input type="button" value="2" onclick="agregar('2')" />
-      <input type="button" value="3" onclick="agregar('3')" />
-      <input type="button" value="-" onclick="agregar('-')" />
-      <input type="button" value="0" onclick="agregar('0')" />
-      <input type="button" value="." onclick="agregar('.')" />
-      <input type="button" value="+" id="boton-suma" onclick="agregar('+')" />
-      <input type="button" value="=" id="boton-igual" onclick="calcular()" />
-    </div>
-    <div class="contenedor-ac">
-      <input type="button" value="AC" id="boton-ac" onclick="borrar()" />
-    </div>
-</div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
